@@ -1,0 +1,22 @@
+#SqlServer
+sqlserver/type=javax.sql.DataSource
+sqlserver/driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+sqlserver/url=jdbc:sqlserver://host;DatabaseName=db
+sqlserver/user=
+sqlserver/password=
+
+#Oracle
+oracle/type=javax.sql.DataSource
+oracle/driver=oracle.jdbc.driver.OracleDriver
+oracle/url=jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = host)(PORT = port))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = serviceInstance)))
+oracle/user=
+oracle/password=
+
+#MySql
+#kettle菜鸟
+mysql/type=javax.sql.DataSource
+mysql/driver=com.mysql.jdbc.Driver
+mysql/url=jdbc:mysql://host:port/db?useUnicode=true&characterEncoding=utf-8
+mysql/user=
+mysql/password=
+
