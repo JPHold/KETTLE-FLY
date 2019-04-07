@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>SQL&#x6267;&#x884c;&#x811a;&#x672c;&#x7ec4;&#x4ef6;</name>
+    <name>Filter rows&#x8fc7;&#x6ee4;&#x6d41;&#x7ec4;&#x4ef6;</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,10 +67,10 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2019&#x2f;04&#x2f;03 14&#x3a;27&#x3a;07.214</created_date>
+  <created_date>2019&#x2f;04&#x2f;06 18&#x3a;42&#x3a;02.952</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019&#x2f;04&#x2f;03 14&#x3a;27&#x3a;07.214</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+  <modified_date>2019&#x2f;04&#x2f;06 18&#x3a;42&#x3a;02.952</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -94,7 +94,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
@@ -103,243 +103,10 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Execute as a single statement-true</from><to>Execute as a single statement-false</to><enabled>Y</enabled> </hop>
-  <hop> <from>Set Variables</from><to>Table input</to><enabled>Y</enabled> </hop>
-  <hop> <from>Table input</from><to>Execute as a single statement-true</to><enabled>Y</enabled> </hop>
-  <hop> <from>Execute as a single statement-false-error 2</from><to>Execute as a single statement-true-error</to><enabled>Y</enabled> </hop>
-  <hop> <from>Execute as a single statement-false</from><to>Variable substitution</to><enabled>Y</enabled> </hop>
-  <hop> <from>Variable substitution</from><to>Execute as a single statement-false-error 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Execute as a single statement-true-error</from><to>Write to log</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Write to log</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Excel&#x8f93;&#x51fa;</name>
-    <type>ExcelOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <encoding/>
-    <append>N</append>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>F&#x3a;&#x5c;&#x4e2a;&#x4eba;&#x5b66;&#x4e60;&#x5c;KETTLE&#x5c;workspace&#x5c;helloKETTLEfile.xls</name>
-      <extention>xls</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
-      <create_parent_folder>N</create_parent_folder>
-      <split>N</split>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <sheetname>Sheet1</sheetname>
-      <autosizecolums>N</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-      </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
-    <fields>
-    </fields>
-    <custom>
-    <header_font_name>arial</header_font_name>
-    <header_font_size>10</header_font_size>
-    <header_font_bold>N</header_font_bold>
-    <header_font_italic>N</header_font_italic>
-    <header_font_underline>no</header_font_underline>
-    <header_font_orientation>horizontal</header_font_orientation>
-    <header_font_color>black</header_font_color>
-    <header_background_color>none</header_background_color>
-    <header_row_height>255</header_row_height>
-    <header_alignment>left</header_alignment>
-    <header_image/>
-    <row_font_name>arial</row_font_name>
-    <row_font_size>10</row_font_size>
-    <row_font_color>black</row_font_color>
-    <row_background_color>none</row_background_color>
-      </custom>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>128</yloc>
-      <draw>N</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Execute as a single statement-false</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CHAPTER1</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>N</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>--&#x591a;&#x6761;sql&#xff0c;Parameters&#x53c2;&#x6570;&#x7684;&#x4e2a;&#x6570;&#x5fc5;&#x987b;&#x8ddf;&#x7b2c;&#x4e00;&#x6761;sql&#x7684;&#x27;&#x3f;&#x27;&#x4e2a;&#x6570;&#x4e00;&#x81f4;,&#x6210;&#x529f;&#xd;&#xa;INSERT INTO T1 VALUES &#x28;4,&#x3f;&#x29;&#x3b;&#xd;&#xa;INSERT INTO T1 VALUES &#x28;5,&#x3f;&#x29;&#x3b;&#xd;&#xa;</sql>
-    <set_params>Y</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>b</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>528</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Execute as a single statement-false-error 2</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CHAPTER1</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>N</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>--&#x591a;&#x6761;sql&#xff0c;Parameters&#x53c2;&#x6570;&#x7684;&#x4e2a;&#x6570;&#x5fc5;&#x987b;&#x8ddf;&#x7b2c;&#x4e00;&#x6761;sql&#x7684;&#x27;&#x3f;&#x27;&#x4e2a;&#x6570;&#x4e0d;&#x4e00;&#x81f4;,&#x62a5;&#x9519;&#xd;&#xa;INSERT INTO T1 VALUES &#x28;6,&#x3f;&#x29;&#x3b;&#xd;&#xa;INSERT INTO T1 VALUES &#x28;7,&#x3f;&#x29;&#x3b;&#xd;&#xa;</sql>
-    <set_params>Y</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>b</name></argument>
-       <argument><name>d</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>912</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Execute as a single statement-true</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CHAPTER1</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>N</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>--&#x5355;&#x6761;sql&#x6267;&#x884c;&#xd;&#xa;INSERT INTO T1 VALUES &#x28;3,&#x3f;&#x29;&#xd;&#xa;</sql>
-    <set_params>Y</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>b</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>320</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Execute as a single statement-true-error</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CHAPTER1</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>Y</single_statement>
-    <replace_variables>N</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>--&#x53ea;&#x5141;&#x8bb8;&#x5355;&#x6761;sql&#x6267;&#x884c;&#xd;&#xa;INSERT INTO T1 VALUES &#x28;6,&#x3f;&#x29;&#x3b;&#xd;&#xa;INSERT INTO T1 VALUES &#x28;7,&#x3f;&#x29;&#x3b;&#xd;&#xa;</sql>
-    <set_params>Y</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>b</name></argument>
-       <argument><name>d</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>912</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Set Variables</name>
-    <type>SetVariable</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <field_name>var1</field_name>
-        <variable_name>KETTLE-FLY&#x7ae0;&#x8282;4</variable_name>
-        <variable_type>JVM</variable_type>
-        <default_value/>
-        </field>
-      </fields>
-    <use_formatting>Y</use_formatting>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>80</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Table input</name>
     <type>TableInput</type>
@@ -352,23 +119,23 @@
            <schema_name/>
            </partitioning>
     <connection>CHAPTER1</connection>
-    <sql>SELECT &#x27;1&#x27; a,&#x27;KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;&#x27; b,&#x27;2&#x27; c,&#x27;KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;&#x27; d</sql>
+    <sql>SELECT &#x27;1&#x27; a,&#x27;KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;&#x27; b</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
+    <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>176</xloc>
-      <yloc>112</yloc>
+      <xloc>192</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Variable substitution</name>
-    <type>ExecSQL</type>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -377,23 +144,32 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>CHAPTER1</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>Y</quoteString>
-    <sql>--&#x53d8;&#x91cf;&#x66ff;&#x6362;&#x6267;&#x884c;sql&#xd;&#xa;INSERT INTO T1 VALUES &#x28;&#x27;8&#x27;,&#x27;&#x24;&#x7b;var1&#x7d;&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-    </arguments>
+<send_true_to>Write to log</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>a</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>b</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>688</xloc>
-      <yloc>112</yloc>
+      <xloc>272</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -413,13 +189,32 @@
       <displayHeader>Y</displayHeader>
       <limitRows>N</limitRows>
       <limitRowsNumber>0</limitRowsNumber>
-      <logmessage/>
+      <logmessage>&#x6ee1;&#x8db3;&#x8fc7;&#x6ee4;&#x6761;&#x4ef6;</logmessage>
     <fields>
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>688</xloc>
-      <yloc>240</yloc>
+      <xloc>416</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>416</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
