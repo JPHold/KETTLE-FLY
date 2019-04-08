@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Insert &#x2f; Update&#x63d2;&#x5165;&#x2f;&#x66f4;&#x65b0;&#x7ec4;&#x4ef6;</name>
+    <name>parent_transformation&#x5d4c;&#x5957;&#x8f6c;&#x6362;&#x6620;&#x5c04;&#x7ec4;&#x4ef6;</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,41 +67,17 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2019&#x2f;04&#x2f;07 16&#x3a;09&#x3a;11.927</created_date>
+  <created_date>2019&#x2f;04&#x2f;08 14&#x3a;54&#x3a;06.769</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019&#x2f;04&#x2f;07 16&#x3a;09&#x3a;11.927</modified_date>
+  <modified_date>2019&#x2f;04&#x2f;08 14&#x3a;54&#x3a;06.769</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>CHAPTER1</name>
-    <server>127.0.0.1</server>
-    <type>MYSQL</type>
-    <access>JNDI</access>
-    <database>CHAPTER1</database>
-    <port>3306</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
-  <hop> <from>Generate Rows</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
+  <hop> <from>Generate Rows</from><to>x&#x3d;a&#x28;&#x2b;-&#x29;b</to><enabled>Y</enabled> </hop>
+  <hop> <from>x&#x3d;a&#x28;&#x2b;-&#x29;b</from><to>Write to log</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Excel&#x8f93;&#x51fa;</name>
@@ -183,7 +159,31 @@
            </partitioning>
     <fields>
       <field>
-        <name>id</name>
+        <name>op</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x2b;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>a</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>2</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>b</name>
         <type>Integer</type>
         <format/>
         <currency/>
@@ -194,35 +194,23 @@
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
-      <field>
-        <name>name</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-insertUpdate</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
     </fields>
     <limit>1</limit>
     <never_ending>N</never_ending>
-    <interval_in_ms>5000</interval_in_ms>
+    <interval_in_ms>1</interval_in_ms>
     <row_time_field>now</row_time_field>
     <last_time_field>FiveSecondsAgo</last_time_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>192</xloc>
-      <yloc>192</yloc>
+      <xloc>208</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Insert &#x2f; Update</name>
-    <type>InsertUpdate</type>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -231,39 +219,70 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>CHAPTER1</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>t1</table>
-      <key>
-        <name>id</name>
-        <field>id</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>name</name>
-        <field>name</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>id</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>name</name>
-        <rename>name</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>336</xloc>
-      <yloc>192</yloc>
+      <xloc>560</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>x&#x3d;a&#x28;&#x2b;-&#x29;b</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x2f;&#x2f;&#x2f;C&#x3a;&#x2f;Users&#x2f;Administrator&#x2f;Desktop&#x2f;20190402&#x2f;KETTLE-FLY&#x2f;chapter_2&#x2f;sub_transformation_mapping_tran.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step>Mapping input specification</output_step>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>a</parent><child>leftValue</child></connector>
+       <connector><parent>b</parent><child>rightValue</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step>&#x2b;Mapping output specification</input_step>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+       <connector><parent>resUp</parent><child>resUp</child></connector>
+    </mapping>    <mapping>    <input_step>-Mapping output specification</input_step>
+    <output_step>Write to log</output_step>
+    <main_path>N</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+       <connector><parent>resDown</parent><child>resDown</child></connector>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>Y</allow_multiple_input>
+    <allow_multiple_output>Y</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>368</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
