@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Merge Join&#x591a;&#x8fde;&#x63a5;&#x65b9;&#x5f0f;&#x5408;&#x5e76;&#x7ec4;&#x4ef6;</name>
+    <name>Database join&#x5b8c;&#x5168;&#x81ea;&#x5b9a;&#x4e49;&#x67e5;&#x8be2;&#x7ec4;&#x4ef6;</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,25 +67,49 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2019&#x2f;04&#x2f;08 20&#x3a;34&#x3a;41.215</created_date>
+  <created_date>2019&#x2f;04&#x2f;09 11&#x3a;40&#x3a;24.199</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019&#x2f;04&#x2f;08 20&#x3a;34&#x3a;41.215</modified_date>
+  <modified_date>2019&#x2f;04&#x2f;09 11&#x3a;40&#x3a;24.199</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>CHAPTER1</name>
+    <server/>
+    <type>MYSQL</type>
+    <access>JNDI</access>
+    <database>CHAPTER1</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
-  <hop> <from>Common row</from><to>Sort rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Diff row</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>Common Output log</to><enabled>Y</enabled> </hop>
-  <hop> <from>Common row 2</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database join</from><to>Write to log</to><enabled>Y</enabled> </hop>
+  <hop> <from>Generate Rows</from><to>Table output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table output</from><to>Database join</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Common Output log</name>
-    <type>WriteToLog</type>
+    <name>Database join</name>
+    <type>DBJoin</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -94,23 +118,47 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <loglevel>log_level_basic</loglevel>
-      <displayHeader>Y</displayHeader>
-      <limitRows>N</limitRows>
-      <limitRowsNumber>0</limitRowsNumber>
-      <logmessage>--&#x5173;&#x8054;&#x4e0a;&#x7684;&#x6570;&#x636e;&#xd;&#xa;</logmessage>
-    <fields>
-      </fields>
+    <connection>CHAPTER1</connection>
+    <rowlimit>1</rowlimit>
+    <sql>SELECT T.ID a,T.NAME b FROM T1 T WHERE T.ID&#x3d;&#x3f; AND T.NAME&#x3d;&#x3f;&#xd;&#xa;UNION ALL SELECT T.ID a,T.NAME b FROM T1 T WHERE T.ID&#x3d;&#x3f; AND T.NAME&#x3d;&#x3f;&#xd;&#xa;UNION ALL SELECT T.ID a,T.NAME b FROM T1 T WHERE T.ID&#x3d;&#x3f; AND T.NAME&#x3d;&#x3f;&#xd;&#xa;</sql>
+    <outer_join>Y</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+      <field>
+        <name>id</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <name>name</name>
+        <type>String</type>
+      </field>
+      <field>
+        <name>id</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <name>name</name>
+        <type>String</type>
+      </field>
+      <field>
+        <name>id</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <name>name</name>
+        <type>String</type>
+      </field>
+    </parameter>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>528</xloc>
-      <yloc>144</yloc>
+      <xloc>400</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Common row</name>
+    <name>Generate Rows</name>
     <type>RowGenerator</type>
     <description/>
     <distribute>Y</distribute>
@@ -140,57 +188,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-mergeJoin</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <limit>1</limit>
-    <never_ending>N</never_ending>
-    <interval_in_ms>5000</interval_in_ms>
-    <row_time_field>now</row_time_field>
-    <last_time_field>FiveSecondsAgo</last_time_field>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>176</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Common row 2</name>
-    <type>RowGenerator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>1</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>name</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-mergeJoin</nullif>
+        <nullif>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-databaseJoin</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -210,8 +208,8 @@
     </step>
 
   <step>
-    <name>Diff row</name>
-    <type>RowGenerator</type>
+    <name>Table output</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -220,48 +218,44 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+    <connection>CHAPTER1</connection>
+    <schema/>
+    <table>t1</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
-      <field>
-        <name>id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>2</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>name</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-mergeJoin2</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
+        <field>
+          <column_name>id</column_name>
+          <stream_name>id</stream_name>
+        </field>
+        <field>
+          <column_name>name</column_name>
+          <stream_name>name</stream_name>
+        </field>
     </fields>
-    <limit>100</limit>
-    <never_ending>N</never_ending>
-    <interval_in_ms>5000</interval_in_ms>
-    <row_time_field>now</row_time_field>
-    <last_time_field>FiveSecondsAgo</last_time_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>176</xloc>
-      <yloc>240</yloc>
+      <xloc>304</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Excel&#x8f93;&#x51fa;</name>
-    <type>ExcelOutput</type>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -270,154 +264,23 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <encoding/>
-    <append>N</append>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>F&#x3a;&#x5c;&#x4e2a;&#x4eba;&#x5b66;&#x4e60;&#x5c;KETTLE&#x5c;workspace&#x5c;helloKETTLEfile.xls</name>
-      <extention>xls</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
-      <create_parent_folder>N</create_parent_folder>
-      <split>N</split>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <sheetname>Sheet1</sheetname>
-      <autosizecolums>N</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-      </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
-    <fields>
-    </fields>
-    <custom>
-    <header_font_name>arial</header_font_name>
-    <header_font_size>10</header_font_size>
-    <header_font_bold>N</header_font_bold>
-    <header_font_italic>N</header_font_italic>
-    <header_font_underline>no</header_font_underline>
-    <header_font_orientation>horizontal</header_font_orientation>
-    <header_font_color>black</header_font_color>
-    <header_background_color>none</header_background_color>
-    <header_row_height>255</header_row_height>
-    <header_alignment>left</header_alignment>
-    <header_image/>
-    <row_font_name>arial</row_font_name>
-    <row_font_size>10</row_font_size>
-    <row_font_color>black</row_font_color>
-    <row_background_color>none</row_background_color>
-      </custom>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>128</yloc>
-      <draw>N</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>FULL OUTER</join_type>
-<step1>Sort rows</step1>
-<step2>Sort rows 2</step2>
-    <keys_1>
-      <key>id</key>
-    </keys_1>
-    <keys_2>
-      <key>id</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>416</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>----------&#x67e5;&#x8be2;&#x6570;&#x636e;&#xd;&#xa;&#xd;&#xa;</logmessage>
     <fields>
       <field>
-        <name>id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>288</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows 2</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
+        <name>a</name>
+        </field>
       <field>
-        <name>id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-    </fields>
+        <name>b</name>
+        </field>
+      </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>288</xloc>
-      <yloc>208</yloc>
+      <xloc>560</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
