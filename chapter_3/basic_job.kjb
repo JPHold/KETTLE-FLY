@@ -93,17 +93,17 @@
       <type>SET_VARIABLES</type>
       <replacevars>Y</replacevars>
       <filename/>
-      <file_variable_type>JVM</file_variable_type>
+      <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
         <field>
           <variable_name>id</variable_name>
           <variable_value>1</variable_value>
-          <variable_type>JVM</variable_type>
+          <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>name</variable_name>
           <variable_value>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-basicJob</variable_value>
-          <variable_type>JVM</variable_type>
+          <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -267,7 +267,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>basic_tran2</from>
+      <from>basic_tran3</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -276,7 +276,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>basic_tran3</from>
+      <from>basic_tran2</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
