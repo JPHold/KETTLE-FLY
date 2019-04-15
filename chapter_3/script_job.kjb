@@ -91,7 +91,7 @@
       <name>JavaScript</name>
       <description/>
       <type>EVAL</type>
-      <script>&#xd;&#xa;var a&#x3d;new Number&#x28;parent_job.getVariable&#x28;&#x22;a&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var b&#x3d;new String&#x28;parent_job.getVariable&#x28;&#x22;b&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var c&#x3d;new Date&#x28;parent_job.getVariable&#x28;&#x22;c&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a-changed&#x27;,a&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;b-changed&#x27;,b&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;c-changed&#x27;,c&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#xd;&#xa;true&#x3b;</script>
+      <script>&#xd;&#xa;var a&#x3d;new Number&#x28;parent_job.getVariable&#x28;&#x22;a&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var b&#x3d;new String&#x28;parent_job.getVariable&#x28;&#x22;b&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var c&#x3d;new Date&#x28;parent_job.getVariable&#x28;&#x22;c&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a-changed&#x27;,a&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;b-changed&#x27;,b&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;c-changed&#x27;,c&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
