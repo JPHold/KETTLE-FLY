@@ -51,8 +51,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>240</xloc>
-      <yloc>256</yloc>
+      <xloc>144</xloc>
+      <yloc>240</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -61,31 +61,31 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>256</yloc>
+      <xloc>624</xloc>
+      <yloc>240</yloc>
       </entry>
     <entry>
       <name>Shell</name>
       <description/>
       <type>SHELL</type>
-      <filename>C&#x3a;&#x5c;Users&#x5c;Administrator&#x5c;Desktop&#x5c;20190402&#x5c;KETTLE-FLY&#x5c;chapter_3&#x5c;sub&#x5c;shell.bat</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;sub&#x5c;shell.bat</filename>
       <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>Y</set_logfile>
       <logfile>shell</logfile>
-      <set_append_logfile>N</set_append_logfile>
-      <logext/>
+      <set_append_logfile>Y</set_append_logfile>
+      <logext>txt</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
       <insertScript>N</insertScript>
-      <script/>
+      <script>ipconfig</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>256</yloc>
+      <xloc>336</xloc>
+      <yloc>240</yloc>
       </entry>
     <entry>
       <name>JavaScript</name>
@@ -95,8 +95,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>256</yloc>
+      <xloc>432</xloc>
+      <yloc>240</yloc>
       </entry>
     <entry>
       <name>Set variables</name>
@@ -108,7 +108,7 @@
       <fields>
         <field>
           <variable_name>a</variable_name>
-          <variable_value>id</variable_value>
+          <variable_value>1</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
@@ -125,8 +125,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
-      <yloc>256</yloc>
+      <xloc>240</xloc>
+      <yloc>240</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -138,8 +138,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>256</yloc>
+      <xloc>528</xloc>
+      <yloc>240</yloc>
       </entry>
   </entries>
   <hops>
@@ -162,15 +162,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Set variables</from>
-      <to>Shell</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>JavaScript</from>
       <to>Write To Log</to>
       <from_nr>0</from_nr>
@@ -182,6 +173,15 @@
     <hop>
       <from>Write To Log</from>
       <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables</from>
+      <to>Shell</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
