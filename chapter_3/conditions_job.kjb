@@ -88,7 +88,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1008</xloc>
+      <xloc>1136</xloc>
       <yloc>256</yloc>
       </entry>
     <entry>
@@ -106,11 +106,11 @@
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
+      <successwhenvarset>Y</successwhenvarset>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>720</xloc>
+      <xloc>848</xloc>
       <yloc>256</yloc>
       </entry>
     <entry>
@@ -124,8 +124,8 @@
       <limit>0</limit>
       <is_custom_sql>Y</is_custom_sql>
       <is_usevars>N</is_usevars>
-      <custom_sql>SELECT&#xd;&#xa;  id&#xd;&#xa;, name&#xd;&#xa;FROM t1 WHERE t1.id&#x3d;&#x27;1&#x27;&#xd;&#xa;</custom_sql>
-      <add_rows_result>N</add_rows_result>
+      <custom_sql>SELECT &#x27;KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e09;&#x7ae0;&#x27; name</custom_sql>
+      <add_rows_result>Y</add_rows_result>
       <clear_result_rows>Y</clear_result_rows>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -183,13 +183,13 @@
       <name>Touch Count Log</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>----&#x5230;&#x8fbe;&#x603b;&#x6570;</logmessage>
+      <logmessage>----&#x5230;&#x8fbe;&#x603b;&#x6570;&#xd;&#xa;&#x24;&#x7b;count&#x7d;</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
+      <xloc>992</xloc>
       <yloc>208</yloc>
       </entry>
     <entry>
@@ -202,7 +202,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
+      <xloc>992</xloc>
       <yloc>304</yloc>
       </entry>
     <entry>
@@ -215,6 +215,39 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>608</xloc>
+      <yloc>256</yloc>
+      </entry>
+    <entry>
+      <name>get_rows_senior_tran</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>C&#x3a;&#x5c;Users&#x5c;Administrator&#x5c;Desktop&#x5c;20190402&#x5c;KETTLE-FLY&#x5c;chapter_3&#x5c;sub&#x5c;conditions_get_rows_senior_tran.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>720</xloc>
       <yloc>256</yloc>
       </entry>
   </entries>
@@ -311,12 +344,21 @@
     </hop>
     <hop>
       <from>Wait for</from>
-      <to>Simple evaluation</to>
+      <to>get_rows_senior_tran</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>get_rows_senior_tran</from>
+      <to>Simple evaluation</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

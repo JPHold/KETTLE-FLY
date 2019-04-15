@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>&#x57fa;&#x7840;&#x4f5c;&#x4e1a;</name>
+  <name>&#x901a;&#x7528;&#x7ec4;&#x4ef6;&#x4f5c;&#x4e1a;</name>
     <description/>
     <extended_description/>
     <job_version/>
@@ -55,12 +55,12 @@
       <yloc>272</yloc>
       </entry>
     <entry>
-      <name>basic_tran1</name>
+      <name>basic_tran</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;basic_tran1.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;general_tran1.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -81,7 +81,7 @@
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>Y</parallel>
+      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>368</xloc>
@@ -102,7 +102,7 @@
         </field>
         <field>
           <variable_name>name</variable_name>
-          <variable_value>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-basicJob</variable_value>
+          <variable_value>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e09;&#x7ae0;-generalJob</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
@@ -128,7 +128,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;basic_job1.kjb</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;general_job1.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -154,12 +154,12 @@
       <yloc>272</yloc>
       </entry>
     <entry>
-      <name>basic_tran2</name>
+      <name>basic_tran1</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;basic_tran2.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;general_tran2.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -187,12 +187,12 @@
       <yloc>208</yloc>
       </entry>
     <entry>
-      <name>basic_tran3</name>
+      <name>basic_tran2</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;basic_tran3.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;general_tran3.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -241,7 +241,7 @@
     </hop>
     <hop>
       <from>basic_job1</from>
-      <to>basic_tran1</to>
+      <to>basic_tran</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -249,26 +249,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>basic_tran1</from>
+      <from>basic_tran</from>
       <to>basic_tran2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>basic_tran1</from>
-      <to>basic_tran3</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>basic_tran3</from>
-      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -278,6 +260,24 @@
     <hop>
       <from>basic_tran2</from>
       <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>basic_tran1</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>basic_tran</from>
+      <to>basic_tran1</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

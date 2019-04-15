@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>&#x57fa;&#x7840;-&#x5d4c;&#x5957;&#x8f6c;&#x6362;3</name>
+    <name>&#x901a;&#x7528;&#x7ec4;&#x4ef6;-&#x5d4c;&#x5957;&#x8f6c;&#x6362;&#x5e76;&#x53d1;1</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -166,7 +166,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>176</xloc>
-      <yloc>208</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -186,13 +186,13 @@
       <displayHeader>Y</displayHeader>
       <limitRows>N</limitRows>
       <limitRowsNumber>0</limitRowsNumber>
-      <logmessage>----&#x57fa;&#x7840;-&#x5d4c;&#x5957;&#x8f6c;&#x6362;3-&#x24;&#x7b;name&#x7d;</logmessage>
+      <logmessage>----&#x901a;&#x7528;&#x7ec4;&#x4ef6;-&#x5d4c;&#x5957;&#x8f6c;&#x6362;&#x5e76;&#x53d1;1-&#x24;&#x7b;name&#x7d;</logmessage>
     <fields>
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>314</xloc>
-      <yloc>210</yloc>
+      <xloc>336</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

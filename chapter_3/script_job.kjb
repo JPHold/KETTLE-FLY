@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>&#x57fa;&#x7840;-&#x5d4c;&#x5957;&#x4f5c;&#x4e1a;1</name>
+  <name>&#x4f5c;&#x4e1a;-&#x811a;&#x672c;&#x7ec4;&#x4ef6;</name>
     <description/>
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
   <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2019&#x2f;04&#x2f;09 17&#x3a;07&#x3a;30.551</created_date>
+  <created_date>2019&#x2f;04&#x2f;10 09&#x3a;00&#x3a;10.393</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019&#x2f;04&#x2f;09 17&#x3a;07&#x3a;30.551</modified_date>
+  <modified_date>2019&#x2f;04&#x2f;10 09&#x3a;00&#x3a;10.393</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -35,19 +35,6 @@
    <shared_objects_file/>
   <entries>
     <entry>
-      <name>Write To Log</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-----&#x57fa;&#x7840;-&#x5d4c;&#x5957;&#x4f5c;&#x4e1a;1-&#x53d8;&#x91cf;&#x3a;&#x24;&#x7b;name&#x7d;</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>384</xloc>
-      <yloc>240</yloc>
-      </entry>
-    <entry>
       <name>START</name>
       <description/>
       <type>SPECIAL</type>
@@ -65,7 +52,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>240</xloc>
-      <yloc>240</yloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -74,43 +61,91 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
-      <yloc>240</yloc>
+      <xloc>768</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
-      <name>DUMMY</name>
+      <name>Shell</name>
       <description/>
-      <type>SPECIAL</type>
-      <start>N</start>
-      <dummy>Y</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
+      <type>SHELL</type>
+      <filename>C&#x3a;&#x5c;Users&#x5c;Administrator&#x5c;Desktop&#x5c;20190402&#x5c;KETTLE-FLY&#x5c;chapter_3&#x5c;sub&#x5c;shell.bat</filename>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>Y</set_logfile>
+      <logfile>shell</logfile>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <insertScript>N</insertScript>
+      <script/>
+      <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
-      <yloc>240</yloc>
+      <xloc>448</xloc>
+      <yloc>256</yloc>
+      </entry>
+    <entry>
+      <name>JavaScript</name>
+      <description/>
+      <type>EVAL</type>
+      <script>&#xd;&#xa;var a&#x3d;new Number&#x28;parent_job.getVariable&#x28;&#x22;a&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var b&#x3d;new String&#x28;parent_job.getVariable&#x28;&#x22;b&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var c&#x3d;new Date&#x28;parent_job.getVariable&#x28;&#x22;c&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a-changed&#x27;,a&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;b-changed&#x27;,b&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;c-changed&#x27;,c&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#xd;&#xa;true&#x3b;</script>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>576</xloc>
+      <yloc>256</yloc>
+      </entry>
+    <entry>
+      <name>Set variables</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>a</variable_name>
+          <variable_value>id</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>b</variable_name>
+          <variable_value>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-scriptJob</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>c</variable_name>
+          <variable_value>2019&#x2f;04&#x2f;10 11&#x3a;44&#x3a;13</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>336</xloc>
+      <yloc>256</yloc>
+      </entry>
+    <entry>
+      <name>Write To Log</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>---&#x811a;&#x672c;&#x7ec4;&#x4ef6;-JavaScript&#xd;&#xa;a-changed&#x3d;&#x24;&#x7b;a-changed&#x7d;&#xd;&#xa;b-changed&#x3d;&#x24;&#x7b;b-changed&#x7d;&#xd;&#xa;c-changed&#x3d;&#x24;&#x7b;c-changed&#x7d;</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>672</xloc>
+      <yloc>256</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
-      <from>START</from>
-      <to>Write To Log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Write To Log</from>
-      <to>DUMMY</to>
+      <from>Shell</from>
+      <to>JavaScript</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -118,13 +153,40 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>DUMMY</from>
-      <to>Success</to>
+      <from>START</from>
+      <to>Set variables</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables</from>
+      <to>Shell</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript</from>
+      <to>Write To Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Write To Log</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
