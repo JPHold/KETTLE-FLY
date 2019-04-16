@@ -51,7 +51,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
+      <xloc>128</xloc>
       <yloc>240</yloc>
       </entry>
     <entry>
@@ -61,7 +61,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
+      <xloc>480</xloc>
       <yloc>240</yloc>
       </entry>
     <entry>
@@ -88,17 +88,6 @@
       <yloc>240</yloc>
       </entry>
     <entry>
-      <name>JavaScript</name>
-      <description/>
-      <type>EVAL</type>
-      <script>&#xd;&#xa;&#x2f;&#x2f;&#x53d8;&#x91cf;&#x83b7;&#x53d6;&#x548c;&#x8bbe;&#x7f6e;&#xd;&#xa;var a&#x3d;new Number&#x28;parent_job.getVariable&#x28;&#x22;a&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var b&#x3d;new String&#x28;parent_job.getVariable&#x28;&#x22;b&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var c&#x3d;new Date&#x28;parent_job.getVariable&#x28;&#x22;c&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a-changed&#x27;,a&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;b-changed&#x27;,b&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;c-changed&#x27;,c&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#xd;&#xa;java.lang.String a&#x3d;&#x22;11&#x22;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a&#x27;,a&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>240</yloc>
-      </entry>
-    <entry>
       <name>Set variables</name>
       <description/>
       <type>SET_VARIABLES</type>
@@ -113,7 +102,7 @@
         </field>
         <field>
           <variable_name>b</variable_name>
-          <variable_value>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-scriptJob</variable_value>
+          <variable_value>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e09;&#x7ae0;-scriptJob</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
@@ -125,32 +114,50 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>240</xloc>
+      <xloc>224</xloc>
       <yloc>240</yloc>
       </entry>
     <entry>
-      <name>Write To Log</name>
+      <name>javascript_job</name>
       <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>---&#x811a;&#x672c;&#x7ec4;&#x4ef6;-JavaScript&#xd;&#xa;a-changed&#x3d;&#x24;&#x7b;a-changed&#x7d;&#xd;&#xa;b-changed&#x3d;&#x24;&#x7b;b-changed&#x7d;&#xd;&#xa;c-changed&#x3d;&#x24;&#x7b;c-changed&#x7d;&#xd;&#xa;d&#x3a;&#x24;&#x7b;a&#x7d;</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;sub&#x5c;javascript_job.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>528</xloc>
+      <xloc>400</xloc>
       <yloc>240</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>Shell</from>
-      <to>JavaScript</to>
+      <to>javascript_job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>START</from>
@@ -162,24 +169,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>JavaScript</from>
-      <to>Write To Log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Write To Log</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Set variables</from>
       <to>Shell</to>
       <from_nr>0</from_nr>
@@ -187,6 +176,15 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>javascript_job</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
