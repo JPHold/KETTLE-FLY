@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>&#x4f5c;&#x4e1a;-&#x811a;&#x672c;&#x7ec4;&#x4ef6;</name>
+  <name>&#x65e5;&#x5fd7;&#x76d1;&#x63a7;</name>
     <description/>
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
   <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2019&#x2f;04&#x2f;10 09&#x3a;00&#x3a;10.393</created_date>
+  <created_date>2019&#x2f;04&#x2f;11 10&#x3a;51&#x3a;12.031</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019&#x2f;04&#x2f;10 09&#x3a;00&#x3a;10.393</modified_date>
+  <modified_date>2019&#x2f;04&#x2f;11 10&#x3a;51&#x3a;12.031</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -51,7 +51,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
+      <xloc>224</xloc>
       <yloc>240</yloc>
       </entry>
     <entry>
@@ -61,100 +61,90 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
-      <yloc>240</yloc>
+      <xloc>576</xloc>
+      <yloc>160</yloc>
       </entry>
     <entry>
-      <name>Shell</name>
+      <name>success_log_tran</name>
       <description/>
-      <type>SHELL</type>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;sub&#x5c;shell.bat</filename>
-      <work_directory/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;success_log_tran.ktr</filename>
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
-      <set_logfile>Y</set_logfile>
-      <logfile>shell</logfile>
-      <set_append_logfile>Y</set_append_logfile>
-      <logext>txt</logext>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <insertScript>N</insertScript>
-      <script>ipconfig</script>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
       <loglevel>Basic</loglevel>
-      <parallel>N</parallel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>320</xloc>
+      <xloc>336</xloc>
       <yloc>240</yloc>
       </entry>
     <entry>
-      <name>JavaScript</name>
+      <name>error_log_tran</name>
       <description/>
-      <type>EVAL</type>
-      <script>&#xd;&#xa;&#x2f;&#x2f;&#x53d8;&#x91cf;&#x83b7;&#x53d6;&#x548c;&#x8bbe;&#x7f6e;&#xd;&#xa;var a&#x3d;new Number&#x28;parent_job.getVariable&#x28;&#x22;a&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var b&#x3d;new String&#x28;parent_job.getVariable&#x28;&#x22;b&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var c&#x3d;new Date&#x28;parent_job.getVariable&#x28;&#x22;c&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a-changed&#x27;,a&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;b-changed&#x27;,b&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;c-changed&#x27;,c&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#xd;&#xa;java.lang.String a&#x3d;&#x22;11&#x22;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a&#x27;,a&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>240</yloc>
-      </entry>
-    <entry>
-      <name>Set variables</name>
-      <description/>
-      <type>SET_VARIABLES</type>
-      <replacevars>Y</replacevars>
-      <filename/>
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-        <field>
-          <variable_name>a</variable_name>
-          <variable_value>1</variable_value>
-          <variable_type>JVM</variable_type>
-        </field>
-        <field>
-          <variable_name>b</variable_name>
-          <variable_value>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e8c;&#x7ae0;-scriptJob</variable_value>
-          <variable_type>JVM</variable_type>
-        </field>
-        <field>
-          <variable_name>c</variable_name>
-          <variable_value>2019&#x2f;04&#x2f;10 11&#x3a;44&#x3a;13</variable_value>
-          <variable_type>JVM</variable_type>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>240</xloc>
-      <yloc>240</yloc>
-      </entry>
-    <entry>
-      <name>Write To Log</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>---&#x811a;&#x672c;&#x7ec4;&#x4ef6;-JavaScript&#xd;&#xa;a-changed&#x3d;&#x24;&#x7b;a-changed&#x7d;&#xd;&#xa;b-changed&#x3d;&#x24;&#x7b;b-changed&#x7d;&#xd;&#xa;c-changed&#x3d;&#x24;&#x7b;c-changed&#x7d;&#xd;&#xa;d&#x3a;&#x24;&#x7b;a&#x7d;</logmessage>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;error_log_tran.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
       <loglevel>Basic</loglevel>
-      <logsubject/>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>Y</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>448</xloc>
+      <yloc>240</yloc>
+      </entry>
+    <entry>
+      <name>Success 2</name>
+      <description/>
+      <type>SUCCESS</type>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>528</xloc>
-      <yloc>240</yloc>
+      <xloc>576</xloc>
+      <yloc>256</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
-      <from>Shell</from>
-      <to>JavaScript</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>START</from>
-      <to>Set variables</to>
+      <to>success_log_tran</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -162,31 +152,31 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>JavaScript</from>
-      <to>Write To Log</to>
+      <from>success_log_tran</from>
+      <to>error_log_tran</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Write To Log</from>
+      <from>error_log_tran</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Set variables</from>
-      <to>Shell</to>
+      <from>error_log_tran</from>
+      <to>Success 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
