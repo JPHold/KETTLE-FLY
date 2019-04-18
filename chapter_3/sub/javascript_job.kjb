@@ -12,6 +12,33 @@
   <modified_date>2019&#x2f;04&#x2f;16 22&#x3a;48&#x3a;38.453</modified_date>
     <parameters>
     </parameters>
+  <connection>
+    <name>CHAPTER1</name>
+    <server/>
+    <type>MYSQL</type>
+    <access>JNDI</access>
+    <database>CHAPTER1</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -35,88 +62,195 @@
    <shared_objects_file/>
   <entries>
     <entry>
-      <name>Write To Log 4</name>
+      <name>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</name>
       <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>---JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;&#xd;&#xa;&#x5f53;&#x524d;&#x7ec4;&#x4ef6;&#x540d;&#x79f0;&#x3a;&#x24;&#x7b;entryName&#x7d;</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
+      <type>EVAL</type>
+      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var nrErros&#x3d;previous_result.getNrErrors&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x5f02;&#x5e38;&#x6570;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;nrErros&#x27;,nrErros&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>160</xloc>
+      <yloc>208</yloc>
+      </entry>
+    <entry>
+      <name>Shell</name>
+      <description/>
+      <type>SHELL</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;shell.bat</filename>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>Y</set_logfile>
+      <logfile>shell</logfile>
+      <set_append_logfile>Y</set_append_logfile>
+      <logext>txt</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <insertScript>N</insertScript>
+      <script>ipconfig</script>
+      <loglevel>Basic</loglevel>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>736</xloc>
+      <yloc>208</yloc>
+      </entry>
+    <entry>
+      <name>SQL</name>
+      <description/>
+      <type>SQL</type>
+      <sql>INSERT INTO T1 &#x28;id,name&#x29; VALUES&#x28;&#x27;1&#x27;,&#x27;KETTLE-FLY-&#x7b2c;&#x4e09;&#x7ae0;-javaScriptJob&#x27;&#x29;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>T</sendOneStatement>
+      <connection>CHAPTER1</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>160</xloc>
+      <yloc>304</yloc>
+      </entry>
+    <entry>
+      <name>JavaScript&#x83b7;&#x53d6;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;</name>
+      <description/>
+      <type>EVAL</type>
+      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;&#xd;&#xa;var a1&#x3d;&#x27;&#x24;&#x7b;b&#x7d;&#x27;&#x3b;&#xd;&#xa;var linesOutput&#x3d;lines_output&#x3b;&#x2f;&#x2f;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesOutput&#x27;,linesOutput&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a1&#x27;,a1&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>304</xloc>
+      <yloc>288</yloc>
+      </entry>
+    <entry>
+      <name>&#x5236;&#x9020;&#x5f02;&#x5e38;</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;for_every_row_error_tran.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>288</xloc>
-      <yloc>192</yloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
-      <name>JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;</name>
-      <description/>
-      <type>EVAL</type>
-      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var entryName&#x3d;_entry_&#x3b;&#x2f;&#x2f;&#x5f53;&#x524d;&#x7ec4;&#x4ef6;&#x7684;&#x540d;&#x79f0;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;entryName&#x27;,entryName&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>400</xloc>
-      <yloc>192</yloc>
-      </entry>
-    <entry>
-      <name>Write To Log 3</name>
+      <name>&#x6253;&#x5370;&#x4e4b;&#x524d;&#x7684;&#x6240;&#x6709;&#x7ed3;&#x679c;</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>---JavaScript&#x83b7;&#x53d6;&#x884c;&#x6570;&#xd;&#xa;&#x4ece;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;inesInput&#x7d;&#xd;&#xa;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesOutput&#x7d;&#xd;&#xa;&#x6570;&#x636e;&#x5e93;&#x8868;&#x4e2d;&#x66f4;&#x65b0;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesUpdated&#x7d;&#xd;&#xa;&#x4ece;&#x4e0a;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesRead&#x7d;&#xd;&#xa;&#x5199;&#x5165;&#x4e0b;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesWritten&#x7d;&#xd;&#xa;&#x4ece;FTP&#x670d;&#x52a1;&#x5668;&#x68c0;&#x7d22;&#x7684;&#x6587;&#x4ef6;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;filesRetrieved&#x7d;</logmessage>
+      <logmessage>---JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;&#xd;&#xa;&#x6570;&#x503c;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;a-changed&#x7d;&#xd;&#xa;&#x5b57;&#x7b26;&#x4e32;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;b-changed&#x7d;&#xd;&#xa;&#x65e5;&#x671f;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;c-changed&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;&#xd;&#xa;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;&#x3a;&#x24;&#x7b;d&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x884c;&#x6570;&#xd;&#xa;&#x4ece;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;inesInput&#x7d;&#xd;&#xa;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesOutput&#x7d;&#xd;&#xa;&#x6570;&#x636e;&#x5e93;&#x8868;&#x4e2d;&#x66f4;&#x65b0;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesUpdated&#x7d;&#xd;&#xa;&#x4ece;&#x4e0a;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesRead&#x7d;&#xd;&#xa;&#x5199;&#x5165;&#x4e0b;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesWritten&#x7d;&#xd;&#xa;&#x4ece;FTP&#x670d;&#x52a1;&#x5668;&#x68c0;&#x7d22;&#x7684;&#x6587;&#x4ef6;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;filesRetrieved&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;&#xd;&#xa;&#x5f53;&#x524d;&#x7ec4;&#x4ef6;&#x540d;&#x79f0;&#xff1a;&#x24;&#x7b;entryName&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#xd;&#xa;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#x884c;&#xff1a;&#x24;&#x7b;rows&#x7d;&#xd;&#xa;&#x24;&#x7b;nrLinesWritten&#x7d;&#xd;&#xa;&#x4e0a;&#x4e00;&#x6b65;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff1a;&#x24;&#x7b;linesRead&#x7d;&#xd;&#xa;&#x4e0a;&#x4e00;&#x6b65;shell&#x811a;&#x672c;&#x7684;&#x6267;&#x884c;&#x72b6;&#x6001;&#xff1a;&#x24;&#x7b;exitStatus&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;&#xd;&#xa;&#x5f02;&#x5e38;&#x6570;&#x91cf;&#xff1a;&#x24;&#x7b;nrErros&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x5165;&#x5e93;&#x7684;&#x6570;&#x636e;&#x6761;&#x6570;&#xd;&#xa;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x7684;&#x6761;&#x6570;&#xff1a;&#x24;&#x7b;linesOutput&#x7d;&#xd;&#xa;a1&#x3a;&#x24;&#x7b;a1&#x7d;&#xd;&#xa;&#xd;&#xa;</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
-      <yloc>192</yloc>
+      <xloc>624</xloc>
+      <yloc>320</yloc>
       </entry>
     <entry>
-      <name>JavaScript&#x83b7;&#x53d6;&#x884c;&#x6570;</name>
+      <name>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</name>
       <description/>
       <type>EVAL</type>
-      <script>&#x2f;&#x2f;&#x884c;&#x6570;&#xd;&#xa;var linesInput&#x3d;lines_input&#x3b;&#x2f;&#x2f;&#x4ece;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;var linesOutput&#x3d;lines_output&#x3b;&#x2f;&#x2f;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;var linesUpdated&#x3d;lines_updated&#x3b;&#x2f;&#x2f;&#x6570;&#x636e;&#x5e93;&#x8868;&#x4e2d;&#x66f4;&#x65b0;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;var linesRead&#x3d;lines_read&#x3b;&#x2f;&#x2f;&#x4ece;&#x4e0a;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;var linesWritten&#x3d;lines_written&#x3b;&#x2f;&#x2f;&#x5199;&#x5165;&#x4e0b;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;var filesRetrieved&#x3d;files_retrieved&#x3b;&#x2f;&#x2f;&#x4ece;FTP&#x670d;&#x52a1;&#x5668;&#x68c0;&#x7d22;&#x7684;&#x6587;&#x4ef6;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;inesInput&#x27;,linesInput&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesOutput&#x27;,linesOutput&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesUpdated&#x27;,linesUpdated&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesRead&#x27;,linesRead&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesWritten&#x27;,linesWritten&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;filesRetrieved&#x27;,filesRetrieved&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var rows&#x3d;previous_result.getRows&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#x884c;&#xd;&#xa;var nrLinesWritten&#x3d;previous_result.getNrLinesWritten&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x5199;&#x5165;&#x7684;&#x884c;&#x6570;&#xd;&#xa;var linesRead&#x3d;previous_result.getNrLinesRead&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x6b65;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xd;&#xa;var exitStatus&#x3d;previous_result.getExitStatus&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x6700;&#x8fd1;&#x4e00;&#x4e2a;shell&#x7ec4;&#x4ef6;&#x7684;&#x6267;&#x884c;&#x72b6;&#x6001;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;rows&#x27;,rows&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;nrLinesWritten&#x27;,nrLinesWritten&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesRead&#x27;,linesRead&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;exitStatus&#x27;,exitStatus&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
-      <yloc>192</yloc>
+      <xloc>448</xloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
-      <name>Write To Log 2</name>
+      <name>&#x5236;&#x9020;&#x591a;&#x6761;&#x6570;&#x636e;</name>
       <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>---JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;&#xd;&#xa;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;&#x3a;&#x24;&#x7b;d&#x7d;</logmessage>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;for_every_row_tran.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
       <loglevel>Basic</loglevel>
-      <logsubject/>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>208</yloc>
+      </entry>
+    <entry>
+      <name>START</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>Y</start>
+      <dummy>N</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
+      <xloc>80</xloc>
       <yloc>112</yloc>
       </entry>
     <entry>
-      <name>Write To Log</name>
+      <name>Success</name>
       <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>---JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;&#xd;&#xa;&#x6570;&#x503c;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;a-changed&#x7d;&#xd;&#xa;&#x5b57;&#x7b26;&#x4e32;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;b-changed&#x7d;&#xd;&#xa;&#x65e5;&#x671f;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;c-changed&#x7d;&#xd;&#xa;</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
+      <type>SUCCESS</type>
       <parallel>N</parallel>
-      <draw>Y</draw>
+      <draw>N</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
-      <yloc>112</yloc>
+      <xloc>160</xloc>
+      <yloc>176</yloc>
       </entry>
     <entry>
-      <name>JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;</name>
+      <name>JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;</name>
       <description/>
       <type>EVAL</type>
-      <script>&#xd;&#xa;&#x2f;&#x2f;&#x53d8;&#x91cf;&#x83b7;&#x53d6;&#xd;&#xa;var a&#x3d;new Number&#x28;parent_job.getVariable&#x28;&#x22;a&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var b&#x3d;new String&#x28;parent_job.getVariable&#x28;&#x22;b&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var c&#x3d;new Date&#x28;parent_job.getVariable&#x28;&#x22;c&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x53d8;&#x91cf;&#x8bbe;&#x7f6e;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a-changed&#x27;,a&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;b-changed&#x27;,b&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;c-changed&#x27;,c&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <script>&#xd;&#xa;parent_job.setVariable&#x28;&#x27;d&#x27;,nr&#x29;&#x3b;&#x2f;&#x2f;&#x7edf;&#x8ba1;&#x5728;&#x6b64;&#x4e4b;&#x524d;&#x6709;&#x591a;&#x5c11;&#x4e2a;&#x903b;&#x8f91;&#x529f;&#x80fd;&#x7ec4;&#x4ef6;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
+      <xloc>448</xloc>
       <yloc>112</yloc>
       </entry>
     <entry>
@@ -150,105 +284,38 @@
       <yloc>112</yloc>
       </entry>
     <entry>
-      <name>JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;</name>
+      <name>JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;</name>
       <description/>
       <type>EVAL</type>
-      <script>&#xd;&#xa;parent_job.setVariable&#x28;&#x27;d&#x27;,nr&#x29;&#x3b;&#x2f;&#x2f;&#x7edf;&#x8ba1;&#x5728;&#x6b64;&#x4e4b;&#x524d;&#x6709;&#x591a;&#x5c11;&#x4e2a;&#x903b;&#x8f91;&#x529f;&#x80fd;&#x7ec4;&#x4ef6;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <script>&#xd;&#xa;&#x2f;&#x2f;&#x53d8;&#x91cf;&#x83b7;&#x53d6;&#xd;&#xa;var a&#x3d;new Number&#x28;parent_job.getVariable&#x28;&#x22;a&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var b&#x3d;new String&#x28;parent_job.getVariable&#x28;&#x22;b&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;var c&#x3d;new Date&#x28;parent_job.getVariable&#x28;&#x22;c&#x22;&#x29;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x53d8;&#x91cf;&#x8bbe;&#x7f6e;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a-changed&#x27;,a&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;b-changed&#x27;,b&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;c-changed&#x27;,c&#x2b;&#x27;-changed&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>272</xloc>
       <yloc>112</yloc>
       </entry>
     <entry>
-      <name>Success</name>
-      <description/>
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>N</draw>
-      <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>192</yloc>
-      </entry>
-    <entry>
-      <name>START</name>
-      <description/>
-      <type>SPECIAL</type>
-      <start>Y</start>
-      <dummy>N</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>112</yloc>
-      </entry>
-    <entry>
-      <name>for_every_row_tran</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;for_every_row_tran.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>176</yloc>
-      </entry>
-    <entry>
-      <name>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</name>
+      <name>JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;</name>
       <description/>
       <type>EVAL</type>
-      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var rows&#x3d;previous_result.getRows&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#x884c;&#xd;&#xa;var nrLinesWritten&#x3d;previous_result.getNrLinesWritten&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x5199;&#x5165;&#x7684;&#x884c;&#x6570;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;rows&#x27;,rows&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;nrLinesWritten&#x27;,nrLinesWritten&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var entryName&#x3d;_entry_&#x3b;&#x2f;&#x2f;&#x5f53;&#x524d;&#x7ec4;&#x4ef6;&#x7684;&#x540d;&#x79f0;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;entryName&#x27;,entryName&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>272</yloc>
-      </entry>
-    <entry>
-      <name>Write To Log 4 2</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>---JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#xd;&#xa;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#x3a;&#x24;&#x7b;rows&#x7d;&#xd;&#xa;&#x24;&#x7b;nrLinesWritten&#x7d;</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>272</yloc>
+      <xloc>736</xloc>
+      <yloc>112</yloc>
       </entry>
   </entries>
   <hops>
+    <hop>
+      <from>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</from>
+      <to>&#x5236;&#x9020;&#x5f02;&#x5e38;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
     <hop>
       <from>START</from>
       <to>Set variables</to>
@@ -265,11 +332,11 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;</from>
-      <to>Write To Log</to>
+      <to>JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -278,24 +345,6 @@
     </hop>
     <hop>
       <from>JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;</from>
-      <to>Write To Log 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>JavaScript&#x83b7;&#x53d6;&#x884c;&#x6570;</from>
-      <to>Write To Log 3</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Write To Log 3</from>
       <to>JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -305,7 +354,7 @@
     </hop>
     <hop>
       <from>JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;</from>
-      <to>Write To Log 4</to>
+      <to>Shell</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -313,8 +362,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Write To Log</from>
-      <to>JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;</to>
+      <from>Shell</from>
+      <to>&#x5236;&#x9020;&#x591a;&#x6761;&#x6570;&#x636e;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -322,25 +371,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Write To Log 2</from>
-      <to>JavaScript&#x83b7;&#x53d6;&#x884c;&#x6570;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Write To Log 4</from>
-      <to>for_every_row_tran</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>for_every_row_tran</from>
+      <from>&#x5236;&#x9020;&#x591a;&#x6761;&#x6570;&#x636e;</from>
       <to>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -349,8 +380,44 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>&#x5236;&#x9020;&#x5f02;&#x5e38;</from>
+      <to>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</from>
+      <to>SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SQL</from>
+      <to>JavaScript&#x83b7;&#x53d6;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript&#x83b7;&#x53d6;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;</from>
+      <to>&#x6253;&#x5370;&#x4e4b;&#x524d;&#x7684;&#x6240;&#x6709;&#x7ed3;&#x679c;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</from>
-      <to>Write To Log 4 2</to>
+      <to>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
