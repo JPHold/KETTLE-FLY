@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>&#x4f5c;&#x4e1a;-Shell&#x7ec4;&#x4ef6;-&#x591a;&#x884c;</name>
+    <name>&#x5236;&#x9020;&#x591a;&#x6761;&#x6570;&#x636e;</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -110,7 +110,7 @@
            </partitioning>
     <fields>
       <field>
-        <name>a</name>
+        <name>id</name>
         <type>Integer</type>
         <format/>
         <currency/>
@@ -122,7 +122,7 @@
         <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>b</name>
+        <name>name</name>
         <type>String</type>
         <format/>
         <currency/>

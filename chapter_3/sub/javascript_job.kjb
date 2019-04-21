@@ -12,33 +12,6 @@
   <modified_date>2019&#x2f;04&#x2f;16 22&#x3a;48&#x3a;38.453</modified_date>
     <parameters>
     </parameters>
-  <connection>
-    <name>CHAPTER1</name>
-    <server/>
-    <type>MYSQL</type>
-    <access>JNDI</access>
-    <database>CHAPTER1</database>
-    <port>1521</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -65,15 +38,15 @@
       <name>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</name>
       <description/>
       <type>EVAL</type>
-      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var nrErros&#x3d;previous_result.getNrErrors&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x5f02;&#x5e38;&#x6570;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;nrErros&#x27;,nrErros&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var executeResultSign&#x3d;previous_result.getResult&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x4e2a;&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x7684;&#x6267;&#x884c;&#x7ed3;&#x679c;&#x72b6;&#x6001;&#xd;&#xa;var nrErros&#x3d;previous_result.getNrErrors&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x4e2a;&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x7684;&#x5f02;&#x5e38;&#x6570;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;executeResultSign&#x27;,executeResultSign&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;nrErros&#x27;,nrErros&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
+      <xloc>304</xloc>
       <yloc>208</yloc>
       </entry>
     <entry>
-      <name>Shell</name>
+      <name>Shell&#x28;&#x7528;&#x4e8e;&#x540e;&#x9762;&#x83b7;&#x53d6;shell&#x6267;&#x884c;&#x72b6;&#x6001;&#x548c;&#x4f7f;&#x7528;&#x7684;&#x6587;&#x4ef6;&#x5217;&#x8868;&#x29;</name>
       <description/>
       <type>SHELL</type>
       <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;shell.bat</filename>
@@ -92,35 +65,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
-      <yloc>208</yloc>
-      </entry>
-    <entry>
-      <name>SQL</name>
-      <description/>
-      <type>SQL</type>
-      <sql>INSERT INTO T1 &#x28;id,name&#x29; VALUES&#x28;&#x27;1&#x27;,&#x27;KETTLE-FLY-&#x7b2c;&#x4e09;&#x7ae0;-javaScriptJob&#x27;&#x29;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>T</sendOneStatement>
-      <connection>CHAPTER1</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>304</yloc>
-      </entry>
-    <entry>
-      <name>JavaScript&#x83b7;&#x53d6;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;</name>
-      <description/>
-      <type>EVAL</type>
-      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;&#xd;&#xa;var a1&#x3d;&#x27;&#x24;&#x7b;b&#x7d;&#x27;&#x3b;&#xd;&#xa;var linesOutput&#x3d;lines_output&#x3b;&#x2f;&#x2f;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesOutput&#x27;,linesOutput&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;a1&#x27;,a1&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>304</xloc>
-      <yloc>288</yloc>
+      <xloc>672</xloc>
+      <yloc>112</yloc>
       </entry>
     <entry>
       <name>&#x5236;&#x9020;&#x5f02;&#x5e38;</name>
@@ -152,31 +98,31 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
+      <xloc>448</xloc>
       <yloc>208</yloc>
       </entry>
     <entry>
       <name>&#x6253;&#x5370;&#x4e4b;&#x524d;&#x7684;&#x6240;&#x6709;&#x7ed3;&#x679c;</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>---JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;&#xd;&#xa;&#x6570;&#x503c;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;a-changed&#x7d;&#xd;&#xa;&#x5b57;&#x7b26;&#x4e32;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;b-changed&#x7d;&#xd;&#xa;&#x65e5;&#x671f;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;c-changed&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;&#xd;&#xa;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;&#x3a;&#x24;&#x7b;d&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x884c;&#x6570;&#xd;&#xa;&#x4ece;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;inesInput&#x7d;&#xd;&#xa;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesOutput&#x7d;&#xd;&#xa;&#x6570;&#x636e;&#x5e93;&#x8868;&#x4e2d;&#x66f4;&#x65b0;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesUpdated&#x7d;&#xd;&#xa;&#x4ece;&#x4e0a;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesRead&#x7d;&#xd;&#xa;&#x5199;&#x5165;&#x4e0b;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;linesWritten&#x7d;&#xd;&#xa;&#x4ece;FTP&#x670d;&#x52a1;&#x5668;&#x68c0;&#x7d22;&#x7684;&#x6587;&#x4ef6;&#x6570;&#xff08;&#x957f;&#xff09;&#x3a;&#x24;&#x7b;filesRetrieved&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;&#xd;&#xa;&#x5f53;&#x524d;&#x7ec4;&#x4ef6;&#x540d;&#x79f0;&#xff1a;&#x24;&#x7b;entryName&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#xd;&#xa;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#x884c;&#xff1a;&#x24;&#x7b;rows&#x7d;&#xd;&#xa;&#x24;&#x7b;nrLinesWritten&#x7d;&#xd;&#xa;&#x4e0a;&#x4e00;&#x6b65;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff1a;&#x24;&#x7b;linesRead&#x7d;&#xd;&#xa;&#x4e0a;&#x4e00;&#x6b65;shell&#x811a;&#x672c;&#x7684;&#x6267;&#x884c;&#x72b6;&#x6001;&#xff1a;&#x24;&#x7b;exitStatus&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;&#xd;&#xa;&#x5f02;&#x5e38;&#x6570;&#x91cf;&#xff1a;&#x24;&#x7b;nrErros&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x5165;&#x5e93;&#x7684;&#x6570;&#x636e;&#x6761;&#x6570;&#xd;&#xa;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x7684;&#x6761;&#x6570;&#xff1a;&#x24;&#x7b;linesOutput&#x7d;&#xd;&#xa;a1&#x3a;&#x24;&#x7b;a1&#x7d;&#xd;&#xa;&#xd;&#xa;</logmessage>
+      <logmessage>---JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;&#xd;&#xa;&#x6570;&#x503c;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;a-changed&#x7d;&#xd;&#xa;&#x5b57;&#x7b26;&#x4e32;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;b-changed&#x7d;&#xd;&#xa;&#x65e5;&#x671f;&#x6570;&#x636e;&#x3d;&#x24;&#x7b;c-changed&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;&#xd;&#xa;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;&#x3a;&#x24;&#x7b;d&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;&#xd;&#xa;&#x5f53;&#x524d;&#x7ec4;&#x4ef6;&#x540d;&#x79f0;&#xff1a;&#x24;&#x7b;entryName&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x524d;&#x9762;&#x6d41;&#x7a0b;&#x7684;&#x7ed3;&#x679c;&#xd;&#xa;&#x4e0a;&#x4e00;&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x662f;&#x5426;&#x505c;&#x6b62;&#xff1a;&#x24;&#x7b;isStop&#x7d;&#xd;&#xa;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#x884c;&#x6570;&#x636e;&#xff1a;&#x24;&#x7b;rows&#x7d;&#xd;&#xa;&#x6700;&#x8fd1;&#x4e00;&#x4e2a;shell&#x7ec4;&#x4ef6;&#x7684;&#x6267;&#x884c;&#x72b6;&#x6001;&#x28;0&#xff1a;&#x6210;&#x529f;&#xff0c;1&#xff1a;&#x5931;&#x8d25;&#x29;&#xff1a;&#x24;&#x7b;exitStatus&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;&#xd;&#xa;&#x4e0a;&#x4e00;&#x4e2a;&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x7684;&#x6267;&#x884c;&#x7ed3;&#x679c;&#x72b6;&#x6001;&#x28;true&#xff1a;&#x6210;&#x529f;&#xff0c;false&#xff1a;&#x5931;&#x8d25;&#x29;&#xff1a;&#x24;&#x7b;executeResultSign&#x7d;&#xd;&#xa;&#x5f02;&#x5e38;&#x6570;&#x91cf;&#xff1a;&#x24;&#x7b;nrErros&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x65e5;&#x5fd7;&#x76f8;&#x5173;&#x4fe1;&#x606f;&#xd;&#xa;&#x4e0a;&#x4e00;&#x4e2a;&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x7684;&#x65e5;&#x5fd7;&#x901a;&#x9053;ID&#xff1a;&#x24;&#x7b;logChannelId&#x7d;&#xd;&#xa;&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x4e2a;&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x53ca;&#x5176;&#x5b50;&#x5b50;&#x5b59;&#x5b59;&#x7ec4;&#x4ef6;&#x7684;&#x65e5;&#x5fd7;&#x6587;&#x672c;&#xff1a;&#x24;&#x7b;logText&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x6587;&#x4ef6;&#x76f8;&#x5173;&#x4fe1;&#x606f;&#xd;&#xa;&#x5728;&#x6b64;&#x4e4b;&#x524d;&#x6240;&#x6709;&#x7ec4;&#x4ef6;&#x4e2d;&#x4f7f;&#x7528;&#x7684;&#x6240;&#x6709;&#x6587;&#x4ef6;&#x7684;&#x5217;&#x8868;&#xff1a;&#x24;&#x7b;resultFilesList&#x7d;&#xd;&#xa;&#xd;&#xa;--JavaScript&#x83b7;&#x53d6;&#x7cfb;&#x7edf;&#x76f8;&#x5173;&#x4fe1;&#x606f;&#xd;&#xa;&#x662f;&#x5426;&#x4e3a;Window&#x7cfb;&#x7edf;&#x28;true&#xff1a;&#x662f;&#xff0c;false&#xff1a;&#x5426;&#x29;&#xff1a;&#x24;&#x7b;isWindows&#x7d;&#xd;&#xa;&#xd;&#xa;---JavaScript&#x83b7;&#x53d6;&#x64cd;&#x4f5c;&#x8868;&#x6570;&#x636e;&#x7684;&#x6761;&#x6570;&#xd;&#xa;&#x5199;&#x5165;&#x8868;&#x7684;&#x6761;&#x6570;&#xff1a;&#x24;&#x7b;linesOutput&#x7d;&#xd;&#xa;&#x8bfb;&#x53d6;&#x8868;&#x7684;&#x6761;&#x6570;&#xff1a;&#x24;&#x7b;inesInput&#x7d;&#xd;&#xa;&#x4e0a;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff1a;&#x24;&#x7b;linesRead&#x7d;&#xd;&#xa;&#x66f4;&#x65b0;&#x6761;&#x6570;&#xff1a;&#x24;&#x7b;linesUpdated&#x7d;</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
+      <xloc>928</xloc>
       <yloc>320</yloc>
       </entry>
     <entry>
       <name>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</name>
       <description/>
       <type>EVAL</type>
-      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var rows&#x3d;previous_result.getRows&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#x884c;&#xd;&#xa;var nrLinesWritten&#x3d;previous_result.getNrLinesWritten&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x5199;&#x5165;&#x7684;&#x884c;&#x6570;&#xd;&#xa;var linesRead&#x3d;previous_result.getNrLinesRead&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x6b65;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xd;&#xa;var exitStatus&#x3d;previous_result.getExitStatus&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x6700;&#x8fd1;&#x4e00;&#x4e2a;shell&#x7ec4;&#x4ef6;&#x7684;&#x6267;&#x884c;&#x72b6;&#x6001;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;rows&#x27;,rows&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;nrLinesWritten&#x27;,nrLinesWritten&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesRead&#x27;,linesRead&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;exitStatus&#x27;,exitStatus&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var isStop&#x3d;previous_result.isStopped&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x662f;&#x5426;&#x505c;&#x6b62;&#xd;&#xa;var rows&#x3d;previous_result.getRows&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;&#x884c;&#xd;&#xa;var exitStatus&#x3d;previous_result.getExitStatus&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x6700;&#x8fd1;&#x4e00;&#x4e2a;shell&#x7ec4;&#x4ef6;&#x7684;&#x6267;&#x884c;&#x72b6;&#x6001;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;isStop&#x27;,isStop&#x29;&#x3b;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;rows&#x27;,rows&#x29;&#x3b;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;exitStatus&#x27;,exitStatus&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>672</xloc>
       <yloc>208</yloc>
       </entry>
     <entry>
@@ -209,7 +155,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>592</xloc>
+      <xloc>928</xloc>
       <yloc>208</yloc>
       </entry>
     <entry>
@@ -239,7 +185,7 @@
       <parallel>N</parallel>
       <draw>N</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
+      <xloc>192</xloc>
       <yloc>176</yloc>
       </entry>
     <entry>
@@ -250,7 +196,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>928</xloc>
       <yloc>112</yloc>
       </entry>
     <entry>
@@ -280,7 +226,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
+      <xloc>192</xloc>
       <yloc>112</yloc>
       </entry>
     <entry>
@@ -291,31 +237,140 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
+      <xloc>304</xloc>
       <yloc>112</yloc>
       </entry>
     <entry>
-      <name>JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;</name>
+      <name>JavaScript&#x83b7;&#x53d6;&#x7ec4;&#x4ef6;&#x540d;&#x79f0;</name>
       <description/>
       <type>EVAL</type>
-      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var entryName&#x3d;_entry_&#x3b;&#x2f;&#x2f;&#x5f53;&#x524d;&#x7ec4;&#x4ef6;&#x7684;&#x540d;&#x79f0;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;entryName&#x27;,entryName&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var entryName&#x3d;_entry_&#x3b;&#x2f;&#x2f;&#x5f53;&#x524d;&#x7ec4;&#x4ef6;&#x7684;&#x540d;&#x79f0;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;entryName&#x27;,entryName&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>448</xloc>
       <yloc>112</yloc>
+      </entry>
+    <entry>
+      <name>&#x64cd;&#x4f5c;&#x8868;&#x6570;&#x636e;</name>
+      <description>1111</description>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;for_table_output_tran.ktr</filename>
+      <transname/>
+      <arg_from_previous>Y</arg_from_previous>
+      <params_from_previous>Y</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>Y</logging_remote_work>
+      <argument0>lines_output</argument0>
+      <argument1>lines_read</argument1>
+      <parameters>        <pass_all_parameters>N</pass_all_parameters>
+            <parameter>            <name>lines_read</name>
+            <stream_name/>
+            <value/>
+            </parameter>            <parameter>            <name>lines_output</name>
+            <stream_name/>
+            <value/>
+            </parameter>      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>464</xloc>
+      <yloc>320</yloc>
+      </entry>
+    <entry>
+      <name>JavaScript&#x83b7;&#x53d6;&#x8868;&#x64cd;&#x4f5c;&#x6761;&#x6570;&#x28;&#x65e0;&#x6548;&#x29;</name>
+      <description/>
+      <type>EVAL</type>
+      <script>&#x2f;&#x2f;&#x540d;&#x79f0;&#xd;&#xa;var linesInput&#x3d;previous_result.getNrLinesInput&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4ece;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;var linesOutput&#x3d;previous_result.getNrLinesOutput&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;var linesUpdated&#x3d;previous_result.getNrLinesUpdated&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x6570;&#x636e;&#x5e93;&#x8868;&#x4e2d;&#x66f4;&#x65b0;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;  &#xd;&#xa;var linesRead&#x3d;previous_result.getNrLinesRead&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4ece;&#x4e0a;&#x4e00;&#x4e2a;&#x8f6c;&#x6362;&#x6b65;&#x9aa4;&#x8bfb;&#x53d6;&#x7684;&#x884c;&#x6570;&#xff08;&#x957f;&#xff09;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;inesInput&#x27;,linesInput&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesOutput&#x27;,linesOutput&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesUpdated&#x27;,linesUpdated&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;linesRead&#x27;,linesRead&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;&#x6210;&#x529f;&#x8fd4;&#x56de;&#x28;true&#x29;&#x6216;&#x5931;&#x8d25;&#x8fd4;&#x56de;&#x28;false&#x29;&#xd;&#xa;true&#x3b;</script>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>672</xloc>
+      <yloc>320</yloc>
+      </entry>
+    <entry>
+      <name>&#x5236;&#x9020;&#x65e5;&#x5fd7;</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;for_log_tran.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>192</xloc>
+      <yloc>208</yloc>
+      </entry>
+    <entry>
+      <name>JavaScript&#x83b7;&#x53d6;&#x65e5;&#x5fd7;&#x76f8;&#x5173;&#x4fe1;&#x606f;</name>
+      <description/>
+      <type>EVAL</type>
+      <script>var logText&#x3d;previous_result.getLogText&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x4e2a;&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x53ca;&#x5176;&#x5b50;&#x5b50;&#x5b59;&#x5b59;&#x7ec4;&#x4ef6;&#x7684;&#x65e5;&#x5fd7;&#x6587;&#x672c;&#xd;&#xa;var logChannelId&#x3d;previous_result.getLogChannelId&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x4e0a;&#x4e00;&#x4e2a;&#x4f5c;&#x4e1a;&#x6761;&#x76ee;&#x7684;&#x65e5;&#x5fd7;&#x901a;&#x9053;&#x7684;ID&#x3002;&#x60a8;&#x53ef;&#x4ee5;&#x4f7f;&#x7528;&#x5b83;&#x6765;&#x67e5;&#x627e;&#x65e5;&#x5fd7;&#x901a;&#x9053;&#x65e5;&#x5fd7;&#x8868;&#x4e2d;&#x6709;&#x5173;&#x6267;&#x884c;&#x6cbf;&#x88ad;&#x7684;&#x4fe1;&#x606f;&#x3002;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;logText&#x27;,logText&#x29;&#x3b;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;logChannelId&#x27;,logChannelId&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;true&#x3b;</script>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>80</xloc>
+      <yloc>208</yloc>
+      </entry>
+    <entry>
+      <name>JavaScript&#x83b7;&#x53d6;&#x6587;&#x4ef6;&#x76f8;&#x5173;&#x4fe1;&#x606f;</name>
+      <description/>
+      <type>EVAL</type>
+      <script>var resultFilesList&#x3d;previous_result.getResultFilesList&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x5728;&#x6b64;&#x4e4b;&#x524d;&#x6240;&#x6709;&#x7ec4;&#x4ef6;&#x4e2d;&#x4f7f;&#x7528;&#x7684;&#x6240;&#x6709;&#x6587;&#x4ef6;&#x7684;&#x5217;&#x8868; &#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;resultFilesList&#x27;,resultFilesList&#x29;&#x3b;&#xd;&#xa;true&#x3b;</script>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>80</xloc>
+      <yloc>320</yloc>
+      </entry>
+    <entry>
+      <name>JavaScript&#x83b7;&#x53d6;&#x7cfb;&#x7edf;&#x76f8;&#x5173;&#x4fe1;&#x606f;</name>
+      <description/>
+      <type>EVAL</type>
+      <script>var isWindows&#x3d;is_windows&#x3b;&#x2f;&#x2f;&#x662f;&#x5426;&#x4e3a;Window&#x7cfb;&#x7edf;&#x28;true&#xff1a;&#x662f;&#xff0c;false&#xff1a;&#x5426;&#x29;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;isWindows&#x27;,isWindows&#x29;&#x3b;&#xd;&#xa;true&#x3b;</script>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>304</xloc>
+      <yloc>320</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</from>
-      <to>&#x5236;&#x9020;&#x5f02;&#x5e38;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
     <hop>
       <from>START</from>
       <to>Set variables</to>
@@ -335,35 +390,107 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;</from>
+      <from>JavaScript&#x83b7;&#x53d6;&#x7ec4;&#x4ef6;&#x540d;&#x79f0;</from>
+      <to>Shell&#x28;&#x7528;&#x4e8e;&#x540e;&#x9762;&#x83b7;&#x53d6;shell&#x6267;&#x884c;&#x72b6;&#x6001;&#x548c;&#x4f7f;&#x7528;&#x7684;&#x6587;&#x4ef6;&#x5217;&#x8868;&#x29;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>&#x5236;&#x9020;&#x5f02;&#x5e38;</from>
+      <to>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Shell&#x28;&#x7528;&#x4e8e;&#x540e;&#x9762;&#x83b7;&#x53d6;shell&#x6267;&#x884c;&#x72b6;&#x6001;&#x548c;&#x4f7f;&#x7528;&#x7684;&#x6587;&#x4ef6;&#x5217;&#x8868;&#x29;</from>
       <to>JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>JavaScript&#x83b7;&#x53d6;&#x903b;&#x8f91;&#x5904;&#x7406;&#x7ec4;&#x4ef6;&#x4e2a;&#x6570;</from>
-      <to>JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>JavaScript&#x83b7;&#x53d6;&#x540d;&#x79f0;</from>
-      <to>Shell</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Shell</from>
       <to>&#x5236;&#x9020;&#x591a;&#x6761;&#x6570;&#x636e;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript&#x8bbe;&#x7f6e;&#x548c;&#x83b7;&#x53d6;&#x53d8;&#x91cf;</from>
+      <to>JavaScript&#x83b7;&#x53d6;&#x7ec4;&#x4ef6;&#x540d;&#x79f0;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</from>
+      <to>&#x5236;&#x9020;&#x5f02;&#x5e38;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>&#x64cd;&#x4f5c;&#x8868;&#x6570;&#x636e;</from>
+      <to>JavaScript&#x83b7;&#x53d6;&#x8868;&#x64cd;&#x4f5c;&#x6761;&#x6570;&#x28;&#x65e0;&#x6548;&#x29;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript&#x83b7;&#x53d6;&#x8868;&#x64cd;&#x4f5c;&#x6761;&#x6570;&#x28;&#x65e0;&#x6548;&#x29;</from>
+      <to>&#x6253;&#x5370;&#x4e4b;&#x524d;&#x7684;&#x6240;&#x6709;&#x7ed3;&#x679c;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</from>
+      <to>&#x5236;&#x9020;&#x65e5;&#x5fd7;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>&#x5236;&#x9020;&#x65e5;&#x5fd7;</from>
+      <to>JavaScript&#x83b7;&#x53d6;&#x65e5;&#x5fd7;&#x76f8;&#x5173;&#x4fe1;&#x606f;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>JavaScript&#x83b7;&#x53d6;&#x65e5;&#x5fd7;&#x76f8;&#x5173;&#x4fe1;&#x606f;</from>
+      <to>JavaScript&#x83b7;&#x53d6;&#x6587;&#x4ef6;&#x76f8;&#x5173;&#x4fe1;&#x606f;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -380,17 +507,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>&#x5236;&#x9020;&#x5f02;&#x5e38;</from>
-      <to>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</from>
-      <to>SQL</to>
+      <from>JavaScript&#x83b7;&#x53d6;&#x6587;&#x4ef6;&#x76f8;&#x5173;&#x4fe1;&#x606f;</from>
+      <to>JavaScript&#x83b7;&#x53d6;&#x7cfb;&#x7edf;&#x76f8;&#x5173;&#x4fe1;&#x606f;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -398,26 +516,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL</from>
-      <to>JavaScript&#x83b7;&#x53d6;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>JavaScript&#x83b7;&#x53d6;&#x5199;&#x5165;&#x6570;&#x636e;&#x5e93;&#x6216;&#x6587;&#x4ef6;&#x7684;&#x884c;&#x6570;</from>
-      <to>&#x6253;&#x5370;&#x4e4b;&#x524d;&#x7684;&#x6240;&#x6709;&#x7ed3;&#x679c;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>JavaScript&#x83b7;&#x53d6;&#x4e0a;&#x4e00;&#x6b65;&#x7ed3;&#x679c;</from>
-      <to>JavaScript&#x83b7;&#x53d6;&#x5f02;&#x5e38;&#x6570;&#x91cf;</to>
+      <from>JavaScript&#x83b7;&#x53d6;&#x7cfb;&#x7edf;&#x76f8;&#x5173;&#x4fe1;&#x606f;</from>
+      <to>&#x64cd;&#x4f5c;&#x8868;&#x6570;&#x636e;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -428,7 +528,7 @@
   <notepads>
     <notepad>
       <note>&#x63a2;&#x7d22;JavaScript&#x4f5c;&#x4e1a;&#x7ec4;&#x4ef6;&#x7528;&#x6cd5;</note>
-      <xloc>16</xloc>
+      <xloc>48</xloc>
       <yloc>32</yloc>
       <width>164</width>
       <heigth>26</heigth>
