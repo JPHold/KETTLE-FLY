@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>&#x5236;&#x9020;&#x591a;&#x6761;&#x6570;&#x636e;</name>
+    <name>&#x8f6c;&#x6362;&#x5171;&#x4eab;&#x7ed3;&#x679c;&#x7ed9;&#x8f6c;&#x6362;-&#x65b9;&#x5f0f;1</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,20 +67,22 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2019&#x2f;04&#x2f;16 23&#x3a;00&#x3a;05.773</created_date>
+  <created_date>2019&#x2f;04&#x2f;21 21&#x3a;59&#x3a;55.757</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019&#x2f;04&#x2f;16 23&#x3a;00&#x3a;05.773</modified_date>
+  <modified_date>2019&#x2f;04&#x2f;21 21&#x3a;59&#x3a;55.757</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Generate Rows</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get rows from result</from><to>Write to log</to><enabled>Y</enabled> </hop>
+  <hop> <from>Write to log</from><to>&#x6539;&#x53d8;resultId&#x28;&#x786e;&#x5b9a;&#x8f6c;&#x6362;&#x6267;&#x884c;&#x8f6c;&#x6362;&#xff0c;&#x7ed3;&#x679c;&#x662f;&#x5171;&#x4eab;&#x7684;&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x6539;&#x53d8;resultId&#x28;&#x786e;&#x5b9a;&#x8f6c;&#x6362;&#x6267;&#x884c;&#x8f6c;&#x6362;&#xff0c;&#x7ed3;&#x679c;&#x662f;&#x5171;&#x4eab;&#x7684;&#x29;</from><to>&#x8f6c;&#x6362;&#x5171;&#x4eab;&#x7ed3;&#x679c;&#x7ed9;&#x8f6c;&#x6362;-&#x65b9;&#x5f0f;2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Copy rows to result</name>
-    <type>RowsToResult</type>
+    <name>Get rows from result</name>
+    <type>RowsFromResult</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -89,17 +91,25 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-     <cluster_schema/>
+    <fields>      <field>        <name>resultId</name>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>resultName</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>336</xloc>
-      <yloc>112</yloc>
+      <xloc>192</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Generate Rows</name>
-    <type>RowGenerator</type>
+    <name>&#x8f6c;&#x6362;&#x5171;&#x4eab;&#x7ed3;&#x679c;&#x7ed9;&#x8f6c;&#x6362;-&#x65b9;&#x5f0f;2</name>
+    <type>TransExecutor</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -108,41 +118,95 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>
-      <field>
-        <name>id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>1</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>name</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e09;&#x7ae0;-scriptJob</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <limit>3</limit>
-    <never_ending>N</never_ending>
-    <interval_in_ms>5000</interval_in_ms>
-    <row_time_field>now</row_time_field>
-    <last_time_field>FiveSecondsAgo</last_time_field>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;tran_tran_result_link2.ktr</filename>
+    <directory_path/>
+    <group_size>1</group_size>
+    <group_field/>
+    <group_time/>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    <execution_result_target_step/>
+    <execution_time_field>ExecutionTime</execution_time_field>
+    <execution_result_field>ExecutionResult</execution_result_field>
+    <execution_errors_field>ExecutionNrErrors</execution_errors_field>
+    <execution_lines_read_field>ExecutionLinesRead</execution_lines_read_field>
+    <execution_lines_written_field>ExecutionLinesWritten</execution_lines_written_field>
+    <execution_lines_input_field>ExecutionLinesInput</execution_lines_input_field>
+    <execution_lines_output_field>ExecutionLinesOutput</execution_lines_output_field>
+    <execution_lines_rejected_field>ExecutionLinesRejected</execution_lines_rejected_field>
+    <execution_lines_updated_field>ExecutionLinesUpdated</execution_lines_updated_field>
+    <execution_lines_deleted_field>ExecutionLinesDeleted</execution_lines_deleted_field>
+    <execution_files_retrieved_field>ExecutionFilesRetrieved</execution_files_retrieved_field>
+    <execution_exit_status_field>ExecutionExitStatus</execution_exit_status_field>
+    <execution_log_text_field>ExecutionLogText</execution_log_text_field>
+    <execution_log_channelid_field>ExecutionLogChannelId</execution_log_channelid_field>
+    <result_rows_target_step/>
+    <result_files_target_step/>
+    <result_files_file_name_field>FileName</result_files_file_name_field>
+    <executors_output_step/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>176</xloc>
-      <yloc>112</yloc>
+      <xloc>736</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>---&#x8f6c;&#x6362;&#x4e0e;&#x8f6c;&#x6362;&#x8f93;&#x51fa;&#x5171;&#x4eab;&#x7ed3;&#x679c;&#x65b9;&#x5f0f;1</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x6539;&#x53d8;resultId&#x28;&#x786e;&#x5b9a;&#x8f6c;&#x6362;&#x6267;&#x884c;&#x8f6c;&#x6362;&#xff0c;&#x7ed3;&#x679c;&#x662f;&#x5171;&#x4eab;&#x7684;&#x29;</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var resultId&#x3d;resultId&#x2b;1&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>resultId</name>
+        <rename>resultId</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>512</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

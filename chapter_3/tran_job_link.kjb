@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>&#x4f5c;&#x4e1a;-&#x811a;&#x672c;&#x7ec4;&#x4ef6;</name>
+  <name>&#x4f5c;&#x4e1a;&#x548c;&#x8f6c;&#x6362;&#x8054;&#x52a8;</name>
     <description/>
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
   <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2019&#x2f;04&#x2f;10 09&#x3a;00&#x3a;10.393</created_date>
+  <created_date>2019&#x2f;04&#x2f;21 17&#x3a;59&#x3a;53.842</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019&#x2f;04&#x2f;10 09&#x3a;00&#x3a;10.393</modified_date>
+  <modified_date>2019&#x2f;04&#x2f;21 17&#x3a;59&#x3a;53.842</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -51,8 +51,41 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>240</xloc>
-      <yloc>240</yloc>
+      <xloc>80</xloc>
+      <yloc>256</yloc>
+      </entry>
+    <entry>
+      <name>&#x53d8;&#x91cf;&#x7684;&#x76f8;&#x5173;&#x64cd;&#x4f5c;</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;tran_job_change_var_link.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>288</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -61,90 +94,134 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>240</yloc>
+      <xloc>848</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
-      <name>javascript_job</name>
+      <name>Set variables</name>
       <description/>
-      <type>JOB</type>
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>id</variable_name>
+          <variable_value>1</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>name</variable_name>
+          <variable_value>KETTLE-FLY-&#x83dc;&#x9e1f;&#x6559;&#x7a0b;&#x7b2c;&#x4e09;&#x7ae0;-tranLinkJob</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>date</variable_name>
+          <variable_value>2019&#x2f;04&#x2f;21 21&#x3a;05&#x3a;24</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>176</xloc>
+      <yloc>256</yloc>
+      </entry>
+    <entry>
+      <name>&#x5171;&#x4eab;&#x7ed3;&#x679c;</name>
+      <description/>
+      <type>TRANS</type>
       <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;sub&#x5c;javascript_job.kjb</filename>
-      <jobname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;tran_job_result_link.ktr</filename>
+      <transname/>
+      <arg_from_previous>Y</arg_from_previous>
+      <params_from_previous>Y</params_from_previous>
       <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
       <logfile/>
       <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
       <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
+      <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>384</xloc>
+      <yloc>256</yloc>
+      </entry>
+    <entry>
+      <name>&#x83b7;&#x53d6;&#x5171;&#x4eab;&#x7ed9;&#x4f5c;&#x4e1a;&#x7684;&#x7ed3;&#x679c;</name>
+      <description/>
+      <type>EVAL</type>
+      <script>var shareRows&#x3d;previous_result.getRows&#x28;&#x29;&#x3b;&#x2f;&#x2f;&#x5171;&#x4eab;&#x7684;&#x7ed3;&#x679c;&#xd;&#xa;&#xd;&#xa;parent_job.setVariable&#x28;&#x27;shareRows&#x27;,shareRows&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;true&#x3b;</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>480</xloc>
-      <yloc>240</yloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
-      <name>shell_job</name>
+      <name>&#x8f93;&#x51fa;&#x65e5;&#x5fd7;</name>
       <description/>
-      <type>JOB</type>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>---&#x4fee;&#x6539;&#x540e;&#x7684;&#x53d8;&#x91cf;&#x503c;&#xd;&#xa;id&#xff1a;&#x24;&#x7b;id&#x7d;&#xd;&#xa;name&#xff1a;&#x24;&#x7b;name&#x7d;&#xd;&#xa;date&#xff1a;&#x24;&#x7b;date&#x7d;&#xd;&#xa;&#xd;&#xa;---&#x8f6c;&#x6362;&#x4e0e;&#x4f5c;&#x4e1a;&#x8f93;&#x51fa;&#x5171;&#x4eab;&#x7ed3;&#x679c;&#xd;&#xa;&#x5171;&#x4eab;&#x7ed3;&#x679c;&#xff1a;&#x24;&#x7b;shareRows&#x7d;&#xd;&#xa;</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>256</yloc>
+      </entry>
+    <entry>
+      <name>&#x8f6c;&#x6362;&#x4e0e;&#x8f6c;&#x6362;&#x5171;&#x4eab;&#x7ed3;&#x679c;</name>
+      <description/>
+      <type>TRANS</type>
       <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;sub&#x5c;shell_job.kjb</filename>
-      <jobname/>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;tran_tran_result_link1.ktr</filename>
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
       <logfile/>
       <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
       <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
+      <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
+      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
-      <yloc>240</yloc>
+      <xloc>704</xloc>
+      <yloc>256</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
-<<<<<<< HEAD
-      <from>javascript_job</from>
-      <to>Success</to>
-=======
-      <from>Shell</from>
-      <to>javascript_job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>START</from>
       <to>Set variables</to>
->>>>>>> 33d943007799f57d69e2c7e8902652a0e3c22e58
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -152,8 +229,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>shell_job</from>
-      <to>javascript_job</to>
+      <from>Set variables</from>
+      <to>&#x53d8;&#x91cf;&#x7684;&#x76f8;&#x5173;&#x64cd;&#x4f5c;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -161,8 +238,44 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>shell_job</to>
+      <from>&#x5171;&#x4eab;&#x7ed3;&#x679c;</from>
+      <to>&#x83b7;&#x53d6;&#x5171;&#x4eab;&#x7ed9;&#x4f5c;&#x4e1a;&#x7684;&#x7ed3;&#x679c;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>&#x53d8;&#x91cf;&#x7684;&#x76f8;&#x5173;&#x64cd;&#x4f5c;</from>
+      <to>&#x5171;&#x4eab;&#x7ed3;&#x679c;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>&#x83b7;&#x53d6;&#x5171;&#x4eab;&#x7ed9;&#x4f5c;&#x4e1a;&#x7684;&#x7ed3;&#x679c;</from>
+      <to>&#x8f93;&#x51fa;&#x65e5;&#x5fd7;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>&#x8f93;&#x51fa;&#x65e5;&#x5fd7;</from>
+      <to>&#x8f6c;&#x6362;&#x4e0e;&#x8f6c;&#x6362;&#x5171;&#x4eab;&#x7ed3;&#x679c;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>&#x8f6c;&#x6362;&#x4e0e;&#x8f6c;&#x6362;&#x5171;&#x4eab;&#x7ed3;&#x679c;</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
