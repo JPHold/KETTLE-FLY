@@ -65,29 +65,6 @@
       <yloc>240</yloc>
       </entry>
     <entry>
-      <name>Shell</name>
-      <description/>
-      <type>SHELL</type>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;sub&#x5c;shell.bat</filename>
-      <work_directory/>
-      <arg_from_previous>N</arg_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>Y</set_logfile>
-      <logfile>shell</logfile>
-      <set_append_logfile>Y</set_append_logfile>
-      <logext>txt</logext>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <insertScript>N</insertScript>
-      <script>ipconfig</script>
-      <loglevel>Basic</loglevel>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>320</xloc>
-      <yloc>240</yloc>
-      </entry>
-    <entry>
       <name>javascript_job</name>
       <description/>
       <type>JOB</type>
@@ -161,15 +138,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Shell</from>
-      <to>shell_job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>shell_job</from>
       <to>javascript_job</to>
       <from_nr>0</from_nr>
@@ -180,7 +148,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Shell</to>
+      <to>shell_job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
