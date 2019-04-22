@@ -172,12 +172,12 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Administrator&#x5c;Desktop&#x5c;20190402&#x5c;KETTLE-FLY&#x5c;chapter_2&#x5c;excle_input_source.xlsx</name>
+      <name>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;excle_input_source.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
-      <name>C&#x3a;&#x5c;Users&#x5c;Administrator&#x5c;Desktop&#x5c;20190402&#x5c;KETTLE-FLY&#x5c;chapter_2&#x5c;excle_input_source.xlsx</name>
+      <name>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;sub&#x2f;excle_input_source.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
