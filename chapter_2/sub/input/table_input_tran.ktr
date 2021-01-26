@@ -659,7 +659,7 @@
       <schema_name/>
     </partitioning>
     <connection>CHAPTER1</connection>
-    <sql>SELECT ? a, ? b,'c' c,'d' d,'${var1}' e,'${var2}' f</sql>
+    <sql>SELECT ? a, ? b,'c' c,'d' d,'${var1}' e</sql>
     <limit>0</limit>
     <lookup>Select values</lookup>
     <execute_each_row>N</execute_each_row>
